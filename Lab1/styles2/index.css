@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: rgb(188, 187, 187);
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.container ul {
+  background: white;
+  display: flex;
+}
+.container ul li {
+  list-style-type: none;
+  border-right: 1px solid black;
+  padding: 5px 20px;
+}
+.container ul li a {
+  text-decoration: none;
+  display: block;
+}
+.container ul li:last-child {
+  border: none;
+}
+.container ul ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+  padding: 0;
+}
+.container ul ul li {
+  background: white;
+  border-bottom: 1px solid black;
+  border-right: none;
+}
+.container ul ul li:last-child {
+  border-bottom: 1px solid black;
+}
+.container ul li:first-child:hover ul {
+  display: block;
+}
+.container .content {
+  display: flex;
+  gap: 10px;
+}
+.container .content .text-area {
+  background: white;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px;
+}
+.container .content .text-area h3 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.container .content .text-area h4 {
+  margin: 15px 0;
+}
+.container .content .table-area {
+  background: white;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px;
+  height: auto;
+  align-self: start;
+}
+.container .content .table-area h4 {
+  font-size: 25px;
+}
+.container .content .table-area table {
+  font-size: 25px;
+}
+.container .content .table-area ol li {
+  margin: 20px 0;
+}
+
+footer {
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+footer p:first-child {
+  border: none;
+}
+footer p {
+  border-left: 1px solid black;
+  padding: 20px 50px;
+}/*# sourceMappingURL=index.css.map */
