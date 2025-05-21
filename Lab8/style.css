@@ -1,0 +1,28 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.student-header {
+    background-color: #ccc;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #888;
+}
+.student-details {
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+.student-details.expanded {
+    display: block;
+}

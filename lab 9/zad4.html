@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightbox</title>
+    <style>
+        .gallery img {
+            width: 100px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <img src="1234567890.png" onclick="openLightbox(this.src)">
+    <img src="1234567890.png" onclick="openLightbox(this.src)">
+    <img src="1234567890.png" onclick="openLightbox(this.src)">
+</div>
+
+<div class="lightbox" onclick="closeLightbox()" id="lightbox">
+    <img id="lightbox-img" src="">
+</div>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <style>
+        body { font-family: Arial; background: #222; color: #fff; display: flex; justify-content: center; padding: 50px; }
+        .calc { background: #aee; padding: 20px; border-radius: 8px; text-align: center; }
+        input, select, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            font-size: 32px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calc">
+    <input id="num1" type="number" placeholder="Pierwsza liczba">
+    <input id="num2" type="number" placeholder="Druga liczba">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button onclick="calculate()">Oblicz</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculate() {
+        const a = parseFloat(document.getElementById('num1').value);
+        const b = parseFloat(document.getElementById('num2').value);
+        const op = document.getElementById('operator').value;
+        let result;
+
+        if (op === '/' && b === 0) {
+            result = 'Błąd: dzielenie przez zero!';
+        } else {
+            result = eval(`${a} ${op} ${b}`);
+        }
+
+        document.getElementById('result').textContent = result;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: lightgray;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="box">Div 1</div>
+    <div class="box">Div 2</div>
+    <div class="box">Div 3</div>
+    <div class="box">Div 4</div>
+</div>
+
+<button onclick="addDiv()">Dodaj</button>
+<button onclick="removeDiv()">Usuń pierwszy</button>
+<button onclick="changeColor()">Zmień kolor 3</button>
+<button onclick="changeText()">Zmień tekst</button>
+
+<script>
+    function addDiv() {
+        const div = document.createElement('div');
+        div.className = 'box';
+        div.textContent = 'Nowy Div';
+        document.getElementById('container').appendChild(div);
+    }
+
+    function removeDiv() {
+        const container = document.getElementById('container');
+        if (container.firstChild) container.removeChild(container.firstChild);
+    }
+
+    function changeColor() {
+        const third = document.querySelectorAll('.box')[2];
+        if (third) third.style.backgroundColor = 'lightblue';
+    }
+
+    function changeText() {
+        document.querySelectorAll('.box').forEach(div => div.textContent = 'nowy tekst');
+    }
+</script>
+
+</body>
+</html>
